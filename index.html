@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0">
+	<link rel="icon" href="icon.png">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        body {margin: 5% auto; background: #f2f2f2; color: #444444; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.8; text-shadow: 0 1px 0 #ffffff; max-width: 85%;}
+        code {background: white;}
+        a {border-bottom: 1px solid #444444; color: #444444; text-decoration: none;}
+        a:hover {border-bottom: 0;}
+		tr:nth-child(even) {background: #CCC}
+		tr:nth-child(odd) {background: #FFF}
+		.btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+    </style>
+</head>
+	<title>Ronald Andres Salad Scoreboard</title>
+	<body>
+	<h1>The Ronald Andres Salad Scoreboard</h1>
+	<p>This page was made by gifted savant, computer genius, and Saskatchewan's most handsome man, Ronald Andres.</p>
+	<p><i>All users of the site owe Ron a glass of wine.</i></p>
+	<div class="btn-group">
+		<button onclick="window.location.href = 'salad-4.html';"><b>4 Players</b> <br/> <i>Remove no cards</i></button>
+		<button onclick="window.location.href = 'salad-5.html';"><b>5 Players</b> <br/> <i>Remove 2 of diamonds and clubs</i></button>
+		<button onclick="window.location.href = 'salad-6.html';"><b>6 Players</b> <br/> <i>Remove all 2s</i></button>
+	</div>
+	</body>
+</html>
