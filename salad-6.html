@@ -9,6 +9,7 @@
         a:hover {border-bottom: 0;}
 		tr:nth-child(even) {background: #BADEBC}
 		tr:nth-child(odd) {background: #FFF}
+		button {margin-right:250px}
     </style>
 </head>
 	<title>Ronald Andres Salad Scoreboard</title>
@@ -24,6 +25,7 @@
 <tr><td>7 up and 7 down<br/>(-100 first out, +100 last out)</td><td><input type="tel"class="pl1" pattern="[0-9]*" style="width: 6em" placeholder="0" oninput="update_score(this.value)" onchange="update_score(this.value)"></td><td><input type="tel"class="pl2" pattern="[0-9]*" style="width: 6em" placeholder="0" oninput="update_score(this.value)" onchange="update_score(this.value)"></td><td><input type="tel"class="pl3" pattern="[0-9]*" style="width: 6em" placeholder="0" oninput="update_score(this.value)" onchange="update_score(this.value)"></td><td><input type="tel"class="pl4" pattern="[0-9]*" style="width: 6em" placeholder="0" oninput="update_score(this.value)" onchange="update_score(this.value)"></td><td><input type="tel"class="pl5" pattern="[0-9]*" style="width: 6em" placeholder="0" oninput="update_score(this.value)" onchange="update_score(this.value)"></td><td><input type="tel"class="pl6" pattern="[0-9]*" style="width: 6em" placeholder="0" oninput="update_score(this.value)" onchange="update_score(this.value)"></td></td><tr><td>Total</td><td><span id="pl1-total"></span></td><td><span id="pl2-total"></span></td><td><span id="pl3-total"></span></td><td><span id="pl4-total"></span></td><td><span id="pl5-total"></span></td><td><span id="pl6-total"></span></td></td>
 	</table>
         <button onclick="window.location.href = 'index.html';">Return to main page</button>
+	<button onclick="new_game()">New game, same players</button>
 	<script>
 
 		function update_score(valNum){
@@ -35,6 +37,17 @@
 					sumVal = sumVal + Number(sum_elements[i].value);
 				}
 				document.getElementById("pl"+p+"-total").innerHTML=sumVal;
+			}
+		}
+
+		function new_game(){
+			num_players = scores.rows[0].cells.length
+			for (p=1; p<num_players;p++){
+				var sum_elements = document.getElementsByClassName("pl"+p);
+				for (i=0; i<sum_elements.length;i++){
+					sum_elements[i].value = sum_elements[i].defaultValue;
+				}
+				document.getElementById("pl"+p+"-total").innerHTML=0;
 			}
 		}
 	</script>

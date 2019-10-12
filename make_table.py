@@ -16,6 +16,7 @@ header = """
         a:hover {border-bottom: 0;}
 		tr:nth-child(even) {background: #BADEBC}
 		tr:nth-child(odd) {background: #FFF}
+		button {margin-right:250px}
     </style>
 </head>
 	<title>Ronald Andres Salad Scoreboard</title>
@@ -25,6 +26,7 @@ header = """
 footer = """
 	</table>
         <button onclick="window.location.href = 'index.html';">Return to main page</button>
+	<button onclick="new_game()">New game, same players</button>
 	<script>
 
 		function update_score(valNum){
@@ -36,6 +38,17 @@ footer = """
 					sumVal = sumVal + Number(sum_elements[i].value);
 				}
 				document.getElementById("pl"+p+"-total").innerHTML=sumVal;
+			}
+		}
+
+		function new_game(){
+			num_players = scores.rows[0].cells.length
+			for (p=1; p<num_players;p++){
+				var sum_elements = document.getElementsByClassName("pl"+p);
+				for (i=0; i<sum_elements.length;i++){
+					sum_elements[i].value = sum_elements[i].defaultValue;
+				}
+				document.getElementById("pl"+p+"-total").innerHTML=0;
 			}
 		}
 	</script>
